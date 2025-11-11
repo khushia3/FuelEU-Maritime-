@@ -64,3 +64,45 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 uvicorn main:app --reload
+```
+### 💻 Frontend Setup
+
+cd frontend
+npm install
+npm run dev
+
+
+The app will run on:
+
+Frontend: http://localhost:5173
+
+Backend: http://localhost:8000
+
+### 🧪 Running Tests
+Backend
+pytest tests/
+
+Frontend
+npm run test
+
+###  📡 Sample Request / Response
+
+POST /api/v1/compute-emission
+
+Request:
+
+{
+  "ship_id": "EU_9087",
+  "fuel_type": "HFO",
+  "voyage_distance": 1500,
+  "fuel_consumed": 72
+}
+
+
+Response:
+
+{
+  "co2_emission": 220.56,
+  "compliance_status": "Compliant",
+  "recommendation": "Maintain current fuel mix."
+}
